@@ -1,11 +1,11 @@
 :root {
     --bg-color: #0a0a0a;
     --text-color: #e0e0e0;
-    --accent-color: #00ff9d;
+    --accent-color: #00a8ff;
     --secondary-color: #2a2a2a;
-    --blockchain-color: #00ff9d33;
-    --link-color: #00ff9d;
-    --link-hover-color: #00cc7d;
+    --blockchain-color: #00a8ff33;
+    --link-color: #00a8ff;
+    --link-hover-color: #0088cc;
 }
 
 * {
