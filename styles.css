@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
     --bg-color: #0a0a0a;
-    --text-color: #e0e0e0;
-    --accent-color: #00a8ff;
-    --secondary-color: #2a2a2a;
-    --blockchain-color: #00a8ff33;
-    --link-color: #00a8ff;
-    --link-hover-color: #0088cc;
+    --text-color: #ffffff;
+    --accent-color: #4a90e2;
+    --secondary-color: #1a1a1a;
+    --border-color: #333333;
 }
 
 * {
@@ -19,79 +19,98 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    perspective: 1000px;
+    position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background cubes */
+.background-cubes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.cube {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--accent-color);
+    opacity: 0.4;
+    animation: float 20s infinite linear;
+    transform-origin: center;
+}
+
+.cube:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.cube:nth-child(2) { top: 60%; left: 20%; animation-delay: -2s; }
+.cube:nth-child(3) { top: 40%; left: 50%; animation-delay: -4s; }
+.cube:nth-child(4) { top: 80%; left: 70%; animation-delay: -6s; }
+.cube:nth-child(5) { top: 30%; left: 80%; animation-delay: -8s; }
+.cube:nth-child(6) { top: 70%; left: 40%; animation-delay: -10s; }
+.cube:nth-child(7) { top: 90%; left: 30%; animation-delay: -12s; }
+.cube:nth-child(8) { top: 10%; left: 60%; animation-delay: -14s; }
+
+@keyframes float {
+    0% {
+        transform: rotate(0deg) translate(0, 0) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) translate(100px, 100px) scale(1.2);
+    }
+    50% {
+        transform: rotate(180deg) translate(0, 200px) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) translate(-100px, 100px) scale(0.8);
+    }
+    100% {
+        transform: rotate(360deg) translate(0, 0) scale(1);
+    }
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    transform-style: preserve-3d;
 }
 
 header {
     text-align: center;
     margin-bottom: 3rem;
-    position: relative;
 }
 
 .profile-header {
     position: relative;
-    padding: 2rem;
-    background: linear-gradient(45deg, var(--blockchain-color), transparent);
-    border-radius: 10px;
-    overflow: hidden;
+    padding: 2rem 0;
 }
 
-.blockchain-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(90deg, transparent 0%, var(--blockchain-color) 50%, transparent 100%);
-    animation: blockchain-flow 3s infinite;
-    pointer-events: none;
-}
-
-@keyframes blockchain-flow {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-h1 {
+.profile-header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--accent-color);
 }
 
-h2 {
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
-    color: var(--accent-color);
-}
-
-h3 {
-    font-size: 1.4rem;
-    margin: 1rem 0;
-    color: var(--accent-color);
+.blockchain-animation {
+    display: none;
 }
 
 section {
-    margin-bottom: 3rem;
-    padding: 2rem;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-    position: relative;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
 }
 
 blockquote {
@@ -99,7 +118,6 @@ blockquote {
     padding-left: 1rem;
     margin: 1rem 0;
     font-style: italic;
-    color: var(--text-color);
 }
 
 .skills-grid {
@@ -112,60 +130,65 @@ blockquote {
     background-color: var(--bg-color);
     padding: 1.5rem;
     border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-.skill-category ul {
+.skill-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+ul {
     list-style-position: inside;
     margin-left: 1rem;
 }
 
-.timeline-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: var(--bg-color);
-    border-radius: 8px;
-    position: relative;
+li {
+    margin-bottom: 0.5rem;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.timeline-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
 }
 
 .location {
-    color: var(--accent-color);
+    color: #888;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
 .social-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .social-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    background-color: var(--bg-color);
-    color: var(--link-color);
+    color: var(--text-color);
     text-decoration: none;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
-    transform: translateY(-2px);
+    border-color: var(--accent-color);
 }
 
 .github-link, .blog-link {
@@ -173,40 +196,28 @@ blockquote {
 }
 
 .github-link a, .blog-link a {
+    color: var(--accent-color);
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--bg-color);
-    color: var(--link-color);
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
 .github-link a:hover, .blog-link a:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    transform: translateY(-2px);
+    text-decoration: underline;
 }
 
 .callout {
     text-align: center;
-    background: linear-gradient(45deg, var(--blockchain-color), transparent);
+    background-color: var(--bg-color);
 }
 
-/* Remove the old cube styles */
-.cube-container, .cube, .face {
-    display: none;
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
     }
 
-    h1 {
+    .profile-header h1 {
         font-size: 2rem;
     }
 
@@ -218,18 +229,7 @@ blockquote {
         grid-template-columns: 1fr;
     }
 
-    .cube-container {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        width: 40px;
-        height: 40px;
+    .social-links {
+        justify-content: center;
     }
-    
-    .front  { transform: translateZ(20px); }
-    .back   { transform: rotateY(180deg) translateZ(20px); }
-    .right  { transform: rotateY(90deg) translateZ(20px); }
-    .left   { transform: rotateY(-90deg) translateZ(20px); }
-    .top    { transform: rotateX(90deg) translateZ(20px); }
-    .bottom { transform: rotateX(-90deg) translateZ(20px); }
-} 
+}

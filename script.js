@@ -1,62 +1,80 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Add smooth scrolling to all links
+$( () => {
+	
+	//On Scroll Functionality
+	$(window).scroll( () => {
+		var windowTop = $(window).scrollTop();
+		windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+		windowTop > 100 ? $('ul').css('top','100px') : $('ul').css('top','160px');
+	});
+	
+	//Click Logo To Scroll To Top
+	$('#logo').on('click', () => {
+		$('html,body').animate({
+			scrollTop: 0
+		},500);
+	});
+	
+	//Smooth Scrolling Using Navigation Menu
+	$('a[href*="#"]').on('click', function(e){
+		$('html,body').animate({
+			scrollTop: $($(this).attr('href')).offset().top - 100
+		},500);
+		e.preventDefault();
+	});
+	
+	//Toggle Menu
+	$('#menu-toggle').on('click', () => {
+		$('#menu-toggle').toggleClass('closeMenu');
+		$('ul').toggleClass('showMenu');
+		
+		$('li').on('click', () => {
+			$('ul').removeClass('showMenu');
+			$('#menu-toggle').removeClass('closeMenu');
+		});
+	});
+	
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Navigation scroll effect
+    const nav = document.querySelector('nav');
+    const logo = document.querySelector('#logo');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            nav.classList.add('navShadow');
+        } else {
+            nav.classList.remove('navShadow');
+        }
+    });
+
+    // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // 3D Cube Scroll Effect
-    const sections = document.querySelectorAll('section');
-    let lastScrollY = window.scrollY;
-    const cubeSize = 100; // Size of the cube in pixels
-
-    function updateCubeTransform() {
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-            
-            if (scrollProgress > 0 && scrollProgress < 1) {
-                // Calculate rotation based on scroll progress
-                const rotation = scrollProgress * 90;
-                const translateZ = Math.sin(rotation * Math.PI / 180) * cubeSize;
-                
-                // Apply 3D transform
-                section.style.transform = `
-                    rotateX(${rotation}deg)
-                    translateZ(${translateZ}px)
-                `;
-                
-                // Add some perspective to the content
-                section.style.opacity = 1 - (scrollProgress * 0.5);
-            } else if (scrollProgress >= 1) {
-                // Section is fully scrolled
-                section.style.transform = 'rotateX(90deg) translateZ(0)';
-                section.style.opacity = 0.5;
-            } else {
-                // Section is not yet scrolled
-                section.style.transform = 'rotateX(0) translateZ(0)';
-                section.style.opacity = 1;
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    }
-
-    // Update on scroll
-    window.addEventListener('scroll', () => {
-        requestAnimationFrame(updateCubeTransform);
     });
 
-    // Initial update
-    updateCubeTransform();
+    // Logo click to scroll to top
+    logo.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
-    // Add intersection observer for fade-in animations
+    // Add animation class to sections when they come into view
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('animate');
             }
         });
     }, {
@@ -64,10 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Observe all sections
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
 });
