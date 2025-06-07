@@ -9,6 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Cube rotation based on scroll
+    const cube = document.querySelector('.cube');
+    let lastScrollY = window.scrollY;
+    let rotationX = 0;
+    let rotationY = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - lastScrollY;
+        
+        // Update rotation based on scroll direction and speed
+        rotationY += scrollDelta * 0.5;
+        rotationX += scrollDelta * 0.2;
+        
+        // Apply rotation to cube
+        cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+        
+        lastScrollY = currentScrollY;
+    });
+
     // Add intersection observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
