@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cube rotation based on scroll
-    const cube = document.querySelector('.cube');
+    const cubes = document.querySelectorAll('.cube');
     let lastScrollY = window.scrollY;
     let rotationX = 0;
     let rotationY = 0;
@@ -20,11 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollDelta = currentScrollY - lastScrollY;
         
         // Update rotation based on scroll direction and speed
-        rotationY += scrollDelta * 0.5;
-        rotationX += scrollDelta * 0.2;
+        rotationY += scrollDelta * 0.2;
+        rotationX += scrollDelta * 0.1;
         
-        // Apply rotation to cube
-        cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+        // Apply rotation to all cubes
+        cubes.forEach(cube => {
+            cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+        });
         
         lastScrollY = currentScrollY;
     });

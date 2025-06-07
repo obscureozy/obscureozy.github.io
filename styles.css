@@ -193,11 +193,12 @@ blockquote {
 .cube-container {
     position: absolute;
     right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100px;
-    height: 100px;
+    top: 2rem;
+    width: 60px;
+    height: 60px;
     perspective: 1000px;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .cube {
@@ -213,18 +214,18 @@ blockquote {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 2px solid var(--accent-color);
-    background: rgba(0, 168, 255, 0.1);
+    border: 1px solid var(--accent-color);
+    background: rgba(0, 168, 255, 0.05);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 
-.front  { transform: translateZ(50px); }
-.back   { transform: rotateY(180deg) translateZ(50px); }
-.right  { transform: rotateY(90deg) translateZ(50px); }
-.left   { transform: rotateY(-90deg) translateZ(50px); }
-.top    { transform: rotateX(90deg) translateZ(50px); }
-.bottom { transform: rotateX(-90deg) translateZ(50px); }
+.front  { transform: translateZ(30px); }
+.back   { transform: rotateY(180deg) translateZ(30px); }
+.right  { transform: rotateY(90deg) translateZ(30px); }
+.left   { transform: rotateY(-90deg) translateZ(30px); }
+.top    { transform: rotateX(90deg) translateZ(30px); }
+.bottom { transform: rotateX(-90deg) translateZ(30px); }
 
 /* Add some glow effect */
 .face::after {
@@ -235,7 +236,7 @@ blockquote {
     right: 0;
     bottom: 0;
     background: linear-gradient(45deg, transparent, var(--accent-color));
-    opacity: 0.1;
+    opacity: 0.05;
 }
 
 /* Responsive adjustments */
@@ -257,10 +258,17 @@ blockquote {
     }
 
     .cube-container {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        margin: 2rem auto;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 40px;
+        height: 40px;
     }
+    
+    .front  { transform: translateZ(20px); }
+    .back   { transform: rotateY(180deg) translateZ(20px); }
+    .right  { transform: rotateY(90deg) translateZ(20px); }
+    .left   { transform: rotateY(-90deg) translateZ(20px); }
+    .top    { transform: rotateX(90deg) translateZ(20px); }
+    .bottom { transform: rotateX(-90deg) translateZ(20px); }
 } 
