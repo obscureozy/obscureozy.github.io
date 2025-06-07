@@ -233,3 +233,20 @@ li {
         justify-content: center;
     }
 }
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-content p {
+    line-height: 1.8;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.about-content p:first-of-type {
+    font-weight: 500;
+}
