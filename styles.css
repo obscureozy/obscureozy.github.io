@@ -19,12 +19,15 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    perspective: 1000px;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    transform-style: preserve-3d;
 }
 
 header {
@@ -86,6 +89,9 @@ section {
     background-color: var(--secondary-color);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    position: relative;
 }
 
 blockquote {
@@ -189,54 +195,9 @@ blockquote {
     background: linear-gradient(45deg, var(--blockchain-color), transparent);
 }
 
-/* Cube Styles */
-.cube-container {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    width: 60px;
-    height: 60px;
-    perspective: 1000px;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: rotateX(0deg) rotateY(0deg);
-    transition: transform 0.5s ease;
-}
-
-.face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--accent-color);
-    background: rgba(0, 168, 255, 0.05);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-}
-
-.front  { transform: translateZ(30px); }
-.back   { transform: rotateY(180deg) translateZ(30px); }
-.right  { transform: rotateY(90deg) translateZ(30px); }
-.left   { transform: rotateY(-90deg) translateZ(30px); }
-.top    { transform: rotateX(90deg) translateZ(30px); }
-.bottom { transform: rotateX(-90deg) translateZ(30px); }
-
-/* Add some glow effect */
-.face::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent, var(--accent-color));
-    opacity: 0.05;
+/* Remove the old cube styles */
+.cube-container, .cube, .face {
+    display: none;
 }
 
 /* Responsive adjustments */

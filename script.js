@@ -9,27 +9,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cube rotation based on scroll
-    const cubes = document.querySelectorAll('.cube');
+    // 3D Cube Scroll Effect
+    const sections = document.querySelectorAll('section');
     let lastScrollY = window.scrollY;
-    let rotationX = 0;
-    let rotationY = 0;
+    const cubeSize = 100; // Size of the cube in pixels
 
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        const scrollDelta = currentScrollY - lastScrollY;
-        
-        // Update rotation based on scroll direction and speed
-        rotationY += scrollDelta * 0.2;
-        rotationX += scrollDelta * 0.1;
-        
-        // Apply rotation to all cubes
-        cubes.forEach(cube => {
-            cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    function updateCubeTransform() {
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            
+            if (scrollProgress > 0 && scrollProgress < 1) {
+                // Calculate rotation based on scroll progress
+                const rotation = scrollProgress * 90;
+                const translateZ = Math.sin(rotation * Math.PI / 180) * cubeSize;
+                
+                // Apply 3D transform
+                section.style.transform = `
+                    rotateX(${rotation}deg)
+                    translateZ(${translateZ}px)
+                `;
+                
+                // Add some perspective to the content
+                section.style.opacity = 1 - (scrollProgress * 0.5);
+            } else if (scrollProgress >= 1) {
+                // Section is fully scrolled
+                section.style.transform = 'rotateX(90deg) translateZ(0)';
+                section.style.opacity = 0.5;
+            } else {
+                // Section is not yet scrolled
+                section.style.transform = 'rotateX(0) translateZ(0)';
+                section.style.opacity = 1;
+            }
         });
-        
-        lastScrollY = currentScrollY;
+    }
+
+    // Update on scroll
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(updateCubeTransform);
     });
+
+    // Initial update
+    updateCubeTransform();
 
     // Add intersection observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
@@ -43,20 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
+    sections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(section);
-    });
-
-    // Add fade-in class
-    document.addEventListener('scroll', () => {
-        document.querySelectorAll('section').forEach(section => {
-            if (section.getBoundingClientRect().top < window.innerHeight * 0.8) {
-                section.classList.add('fade-in');
-            }
-        });
     });
 });
 
