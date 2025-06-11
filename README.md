@@ -78,5 +78,3 @@ MIT License - feel free to use this template for your own website!
 ## Contact
 
 - GitHub: [@obscureozy](https://github.com/obscureozy)
-- LinkedIn: [Your LinkedIn Profile]
-- Email: your.email@example.com
