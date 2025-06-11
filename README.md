@@ -36,8 +36,7 @@ Here's how I set this up on GitHub Pages:
    - Find "GitHub Pages" section
    - Select "main" branch
    - Click "Save"
-
-4. Your site will be live at `https://yourusername.github.io`
+   - Your site will be live at https://yourusername.github.io
 
 ## Running Locally
 
@@ -46,26 +45,40 @@ If you want to check it out on your machine:
 1. Clone it:
    ```bash
    git clone https://github.com/yourusername/yourusername.github.io.git
+   cd yourusername.github.io
    ```
 
-2. Open it up:
+2. Install dependencies:
    ```bash
-   # Python way
-   python -m http.server 8000
-   
-   # Or Node way
-   npx serve
+   npm install
    ```
 
-3. Visit `http://localhost:8000`
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will automatically reload if you make changes to the code.
 
 ## Making It Yours
 
 Feel free to:
-- Edit `index.html` to tell your story
-- Tweak `styles.css` to match your style
-- Add your own touches in `script.js`
+- Edit `src/App.tsx` to tell your story
+- Customize styles in `src/components/` using Emotion
+- Add new components in `src/components/`
+- Modify animations in `src/components/ScrollAnimation.tsx` and `src/components/CustomCursor.tsx`
+
+## Available Scripts
+
+In the project directory, you can run:
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
 ## License
 
-MIT License - take it, use it, make it your own! Just remember to be kind and credit where it's due. 
+MIT License - take it, use it, make it your own! Just remember to be kind and credit where it's due.
