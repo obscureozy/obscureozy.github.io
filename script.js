@@ -36,55 +36,93 @@ $( () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Navigation scroll effect
-    const nav = document.querySelector('nav');
-    const logo = document.querySelector('#logo');
+    // Initialize background cubes animation
+    initBackgroundCubes();
     
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            nav.classList.add('navShadow');
-        } else {
-            nav.classList.remove('navShadow');
-        }
-    });
+    // Add smooth scrolling to all links
+    initSmoothScrolling();
+    
+    // Add hover effects to timeline items
+    initTimelineHover();
+});
 
-    // Smooth scroll for navigation links
+// Initialize the animated background cubes
+function initBackgroundCubes() {
+    const cubes = document.querySelectorAll('.cube');
+    
+    // Add random movement to each cube
+    cubes.forEach(cube => {
+        // Random initial position
+        const randomX = Math.random() * 100;
+        const randomY = Math.random() * 100;
+        
+        // Apply random position
+        cube.style.left = `${randomX}%`;
+        cube.style.top = `${randomY}%`;
+        
+        // Random animation delay
+        const randomDelay = Math.random() * 5;
+        cube.style.animationDelay = `-${randomDelay}s`;
+    });
+}
+
+// Initialize smooth scrolling for all anchor links
+function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
             }
         });
     });
+}
 
-    // Logo click to scroll to top
-    logo.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+// Add hover effects to timeline items
+function initTimelineHover() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach(item => {
+        // Add hover effect
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        
+        // Remove hover effect
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
         });
     });
+}
 
-    // Add animation class to sections when they come into view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+// Add intersection observer for fade-in animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
 
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
     });
+}, observerOptions);
+
+// Observe all sections for fade-in animation
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
 });
 
 // Add fade-in class to CSS
