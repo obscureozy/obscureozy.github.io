@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const scrollBlur = document.querySelector('.scroll-blur');
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
-    if (scrollPosition > 0) {
+    if (scrollPosition > 50) {
         scrollBlur.style.opacity = '1';
     } else {
         scrollBlur.style.opacity = '0';
