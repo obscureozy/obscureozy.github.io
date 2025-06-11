@@ -27,6 +27,7 @@ body {
         radial-gradient(circle at 20% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(74, 144, 226, 0.1) 0%, transparent 50%);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
