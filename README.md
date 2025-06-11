@@ -1,84 +1,82 @@
-# My Humble Corner of the Web
+# My Personal Website
 
-A simple, dark-themed personal website I built to share my journey and connect with fellow tech enthusiasts. Nothing fancy, just a clean space to showcase my experience and interests.
+A clean, modern personal website built with HTML, CSS, and JavaScript. Features a responsive design, smooth animations, and a dark theme.
 
-## What's Inside
+## Features
 
-- A clean, dark theme that's easy on the eyes
-- Simple animations that don't get in the way
-- Mobile-friendly layout (because we all browse on our phones)
-- Just the essentials: my story, skills, and ways to connect
+- 🎨 Clean, modern design
+- 📱 Fully responsive layout
+- ⚡ Smooth animations and transitions
+- 🌙 Dark theme
+- 🔍 SEO friendly
+- 📊 Privacy-focused analytics (GoatCounter)
 
-## Want to Host Your Own?
+## Local Development
 
-Here's how I set this up on GitHub Pages:
-
-1. Create a new repository named `yourusername.github.io`
-   - Head to GitHub.com
-   - Click the "+" in the top right
-   - Choose "New repository"
-   - Name it exactly as `yourusername.github.io`
-   - Make it public
-   - Hit "Create repository"
-
-2. Push your code:
+1. Clone the repository:
    ```bash
-   git init
-   git add .
-   git commit -m "First version"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/yourusername.github.io.git
-   git push -u origin main
+   git clone https://github.com/obscureozy/obscureozy.github.io.git
+   cd obscureozy.github.io
    ```
 
-3. Turn on GitHub Pages:
-   - Go to your repository settings
-   - Find "GitHub Pages" section
-   - Select "main" branch
-   - Click "Save"
-   - Your site will be live at https://yourusername.github.io
-
-## Running Locally
-
-If you want to check it out on your machine:
-
-1. Clone it:
-   ```bash
-   git clone https://github.com/yourusername/yourusername.github.io.git
-   cd yourusername.github.io
-   ```
-
-2. Install dependencies:
+2. Install dependencies (optional, for development):
    ```bash
    npm install
    ```
 
-3. Start the development server:
+3. Start a local server (using `http-server`):
    ```bash
-   npm start
+   npx http-server
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Open [http://localhost:8080](http://localhost:8080) in your browser
 
-The page will automatically reload if you make changes to the code.
+## Project Structure
 
-## Making It Yours
+```
+obscureozy.github.io/
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
+├── script.js           # JavaScript functionality
+├── favicon.svg         # Website favicon
+└── README.md          # This file
+```
 
-Feel free to:
-- Edit `src/App.tsx` to tell your story
-- Customize styles in `src/components/` using Emotion
-- Add new components in `src/components/`
-- Modify animations in `src/components/ScrollAnimation.tsx` and `src/components/CustomCursor.tsx`
+## Customization
 
-## Available Scripts
+### Colors
+Edit the CSS variables in `styles.css`:
+```css
+:root {
+    --primary-color: #4A90E2;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+}
+```
 
-In the project directory, you can run:
+### Content
+Modify `index.html` to update:
+- Personal information
+- Skills
+- Social media links
+- About section
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
-- `npm run build` - Builds the app for production
-- `npm run eject` - Ejects from Create React App (one-way operation)
+### Analytics
+The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-focused analytics. To change the analytics:
+1. Create a new GoatCounter account
+2. Update the script tag in `index.html` with your new counter URL
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages. Any push to the main branch will trigger a new deployment.
 
 ## License
 
-MIT License - take it, use it, make it your own! Just remember to be kind and credit where it's due.
+MIT License - feel free to use this template for your own website!
+
+## Contact
+
+- GitHub: [@obscureozy](https://github.com/obscureozy)
+- LinkedIn: [Your LinkedIn Profile]
+- Email: your.email@example.com
