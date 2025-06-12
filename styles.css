@@ -3,8 +3,8 @@
     --primary-color: #4a90e2;
     --secondary-color: #357abd;
     --text-color: #e0e0e0;
-    --background-color: #1a1a1a;
-    --card-bg: rgba(30, 30, 30, 0.8);
+    --background-color: #0a0a0a;
+    --card-bg: rgba(20, 20, 20, 0.95);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -29,9 +29,6 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    background-image: 
-        radial-gradient(circle at 20% 20%, var(--gradient-start) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, var(--gradient-start) 0%, transparent 50%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -153,25 +150,12 @@ section {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: var(--glass-shadow);
-}
-
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(74, 144, 226, 0.2), 
-        transparent
-    );
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     border-color: rgba(74, 144, 226, 0.2);
 }
 
