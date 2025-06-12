@@ -55,17 +55,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll blur effect
-const scrollBlur = document.querySelector('.scroll-blur');
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition > 50) {
-        scrollBlur.style.opacity = '1';
-    } else {
-        scrollBlur.style.opacity = '0';
-    }
-});
-
 // Add animation on scroll
 const observerOptions = {
     root: null,
@@ -116,31 +105,6 @@ scrollToTopButton.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
-});
-
-// Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
-    themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
-
-// Initialize theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-    document.body.classList.add('dark-theme');
-    themeIcon.className = 'fas fa-sun';
-}
-
-// Listen for system theme changes
-prefersDarkScheme.addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-        setTheme(e.matches ? 'dark' : 'light');
-    }
 });
 
 // Blog Posts from RSS Feed
