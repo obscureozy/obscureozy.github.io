@@ -3,11 +3,11 @@
     --primary-color: #4a90e2;
     --secondary-color: #357abd;
     --text-color: #e0e0e0;
-    --background-color: #0a0a0a;
-    --card-bg: rgba(20, 20, 20, 0.95);
+    --background-color: #000000;
+    --card-bg: #111111;
     --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     --blur-bg: rgba(255, 255, 255, 0.8);
     --gradient-start: rgba(74, 144, 226, 0.1);
     --gradient-end: rgba(74, 144, 226, 0.05);
@@ -22,6 +22,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
+    background-color: var(--background-color);
 }
 
 body {
@@ -34,18 +35,11 @@ body {
     position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 50% 50%, var(--gradient-start) 0%, transparent 50%),
-        radial-gradient(circle at 0% 0%, var(--gradient-end) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
+body::before,
+body::after,
+section::before,
+section::after {
+    display: none;
 }
 
 .container {
@@ -54,6 +48,7 @@ body::before {
     padding: 2rem;
     position: relative;
     z-index: 1;
+    background-color: var(--background-color);
 }
 
 header {
@@ -155,7 +150,7 @@ section {
 
 section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
     border-color: rgba(74, 144, 226, 0.2);
 }
 
@@ -670,8 +665,8 @@ section:nth-child(5) { animation-delay: 0.5s; }
 
 .cube {
     position: absolute;
-    background: rgba(64, 156, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(64, 156, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     transform-origin: center;
     animation: float 20s infinite ease-in-out;
