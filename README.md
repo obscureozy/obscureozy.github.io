@@ -1,17 +1,17 @@
-# My Personal Website
+# Dursun Ozgur Cakirkaya | Personal Portfolio
 
-A clean, modern personal website built with HTML, CSS, and JavaScript. Features a responsive design, smooth animations, and a dark theme.
+A clean, high-end personal website showcasing my experience as a Blockchain & Web3 Technical Support Engineer. Features a dynamic mesh-gradient design, robust glassmorphism UI, direct GraphQL connections to Hashnode for recent blog posts, and stringent modern security architectures.
 
-## Features
+## ✨ Features
 
-- 🎨 Clean, modern design
-- 📱 Fully responsive layout
-- ⚡ Smooth animations and transitions
-- 🌙 Dark theme
-- 🔍 SEO friendly
-- 📊 Privacy-focused analytics (GoatCounter)
+- **Premium Aesthetics**: Smooth, 15-second mesh gradient backgrounds, SVG noise overlays, and responsive frosted glassmorphism elements.
+- **Secure Architecture**: Complete elimination of third-party CORS proxies in flavor of native GraphQL integrations. 
+- **Stringent Security**: Integrated Content Security Policy (CSP) and Subresource Integrity (SRI) on external scripts.
+- **Vite & Modular JS**: Configured with Vite as the build tool to enable ES Modules, hot module replacement, and separated JavaScript components (Animations, Scroll, Typewriter, GraphQL API).
+- **Automated Deployment**: Custom GitHub Actions implicitly push ultra-fast static builds to GitHub Pages utilizing `npm run build`.
+- **Privacy Driven**: Integrates secure, cookie-less GoatCounter analytics to maintain user privacy.
 
-## Local Development
+## 🚀 Local Development
 
 1. Clone the repository:
    ```bash
@@ -19,62 +19,65 @@ A clean, modern personal website built with HTML, CSS, and JavaScript. Features 
    cd obscureozy.github.io
    ```
 
-2. Install dependencies (optional, for development):
+2. Install Vite dependencies:
    ```bash
    npm install
    ```
 
-3. Start a local server (using `http-server`):
+3. Start the local development server with hot-reload:
    ```bash
-   npx http-server
+   npm run dev
    ```
 
-4. Open [http://localhost:8080](http://localhost:8080) in your browser
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Project Structure
+## 🧱 Project Structure
 
 ```
 obscureozy.github.io/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles
-├── script.js           # JavaScript functionality
-├── favicon.svg         # Website favicon
-└── README.md          # This file
+├── index.html              # Main HTML File
+├── src/                    # Source Directory
+│   ├── css/
+│   │   └── main.css        # Main stylesheet with premium grids & animations
+│   └── js/
+│       ├── main.js         # Entry point connecting modules
+│       ├── animations.js   # GSAP/Intersection Observers logic
+│       ├── blog.js         # Direct Hashnode GraphQL Fetch Engine
+│       ├── scroll.js       # Smooth-scroll definitions
+│       └── typewriter.js   # Hero title logic
+├── package.json            # Vite commands and configuration
+└── .github/workflows/      # Automated deployment for GitHub Pages
 ```
 
-## Customization
+## 🛠 Customization
 
-### Colors
-Edit the CSS variables in `styles.css`:
+### Theming
+Modify the primary variables in `src/css/main.css`:
 ```css
 :root {
-    --primary-color: #4A90E2;
-    --text-color: #333;
-    --bg-color: #f5f5f5;
-    --card-bg: #ffffff;
+    /* Premium Dark Theme */
+    --primary-color: #4a90e2;    /* Primary Action/Text */
+    --secondary-color: #357abd;  /* Hover Stats */
+    --accent-color: #4a90e2;     /* Highlights */
+    --background-color: #050505; /* Deep Background Frame */
 }
 ```
 
-### Content
-Modify `index.html` to update:
-- Personal information
-- Skills
-- Social media links
-- About section
+### Hashnode Blog
+If you move your blog, update the `host` query string inside `src/js/blog.js`:
+```javascript
+publication(host: "docak.hashnode.dev") { 
+// Replace with your URL 
+```
 
-### Analytics
-The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-focused analytics. To change the analytics:
-1. Create a new GoatCounter account
-2. Update the script tag in `index.html` with your new counter URL
+### GitHub Pages Settings
+Your repository is using GitHub actions for rapid static deployment. Ensure that your repository settings are as follows:
+1. Navigate to **Settings > Pages**.
+2. Under "Build and deployment", set the **Source** to "**GitHub Actions**". 
+Whenever you push to `main`, the `.github/workflows/deploy.yml` action will compile your code and securely update the live website!
 
-## Deployment
+## 📜 License
+MIT License - Feel free to use this as inspiration for your own Web3 portfolios.
 
-The site is automatically deployed to GitHub Pages. Any push to the main branch will trigger a new deployment.
-
-## License
-
-MIT License - feel free to use this template for your own website!
-
-## Contact
-
+## 📬 Contact
 - GitHub: [@obscureozy](https://github.com/obscureozy)
