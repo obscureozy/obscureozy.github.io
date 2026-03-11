@@ -70,14 +70,11 @@ publication(host: "docak.hashnode.dev") {
 // Replace with your URL 
 ```
 
-### Deploying to GitHub Pages
-Your repository is configured to seamlessly host on GitHub Pages using the `gh-pages` library and relative build paths.
-To push a new version online, you simply need to build the project and run the deployment script:
-```bash
-npm run build
-npm run deploy
-```
-*This command cleanly packages your dist directory and pushes it exactly where GitHub expects it!*
+### GitHub Pages Settings
+Your repository is using GitHub actions for rapid static deployment. Ensure that your repository settings are as follows:
+1. Navigate to **Settings > Pages**.
+2. Under "Build and deployment", set the **Source** to "**GitHub Actions**". 
+Whenever you push to `main`, the `.github/workflows/deploy.yml` action will compile your code and securely update the live website!
 
 ## 📜 License
 MIT License - Feel free to use this as inspiration for your own Web3 portfolios.
