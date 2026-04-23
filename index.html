@@ -17,7 +17,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://obscureozy.github.io/">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Dursun Ozgur Cakirkaya</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -31,8 +30,7 @@
 </head>
 
 <body>
-    <div class="mesh-gradient-bg"></div>
-    <div class="noise-overlay"></div>
+    <div class="grid-bg"></div>
     <div class="container">
         <header>
             <h1>Dursun Ozgur Cakirkaya</h1>
@@ -42,80 +40,118 @@
             </p>
         </header>
 
-        <section class="about">
+        <nav class="tabs-nav">
+            <button class="tab-btn active" data-target="about-tab"><i class="fas fa-file-alt"></i> about_me.md</button>
+            <button class="tab-btn" data-target="metrics-tab"><i class="fas fa-code"></i> impact_metrics.json</button>
+            <button class="tab-btn" data-target="skills-tab"><i class="fas fa-code"></i> skills_stack.json</button>
+            <button class="tab-btn" data-target="timeline-tab"><i class="fab fa-js"></i> experience.js</button>
+
+            <button class="tab-btn" data-target="blog-tab"><i class="fas fa-rss"></i> blog_feed.xml</button>
+
+        </nav>
+
+        <div id="about-tab" class="tab-content active">
+            <section class="about">
             <h2><i class="fas fa-user"></i> About Me</h2>
             <blockquote>
                 "Tech support is more than solving issues—it's about empowering users, optimizing systems, and
                 continuously adapting to tomorrow's tech."
             </blockquote>
-            <p>As a Technical Support Engineer with over 15 years in IT, I've carved a niche in blockchain
-                infrastructure, DApps, and Web3 platforms. My expertise shines through in supporting a thriving
-                community of 1,000+ developers monthly, where I excel at untangling complex challenges across blockchain
-                SDKs, APIs, and node operations with remarkable efficiency.</p>
+            <p>I build bridges between complex technology and the people who use it 🌉. With a career spanning 15+ years ⏳, I have evolved from IT hardware consulting 💻 to supporting enterprise-level API and blockchain ecosystems ⛓️.</p>
 
-            <p>My journey at Tatum has been marked by delivering expert-level support for multi-chain APIs and SDKs,
-                where I've become a go-to resource for resolving intricate developer challenges across EVM-compatible
-                chains. During my tenure at TON Studio, I elevated technical documentation standards, streamlined node
-                installation and staking processes, and mastered DevOps workflows including API deployment and
-                Linux-based cloud infrastructure management.</p>
+            <p>In my recent tenure at Sage, I focused on institutional success and API performance 🚀; at TON Studio, I improved infrastructure clarity via redefining documentation 📄; and at Tatum, I mastered multichain troubleshooting and incident resolution 🛠️.</p>
 
-            <p>My impact extends beyond technical support – I've slashed ticket resolution times by 50% through
-                innovative process optimization and proactive communication strategies. At Enigma Software Solutions, I
-                transformed the support team's effectiveness by revolutionizing user experience and onboarding through
-                comprehensive training and documentation. My toolkit includes mastery of Freshdesk, ClickUp, Jira,
-                GitHub, and GCP, while I continuously expand my expertise through active learning in Python, Go, and
-                Rust to stay at the forefront of blockchain technology evolution.</p>
-        </section>
-
-        <section class="metrics">
-            <h2><i class="fas fa-chart-line"></i> Key Metrics & Impact</h2>
-            <div class="metrics-grid">
-                <div class="metric-item">
-                    <span class="metric-number">50%</span>
-                    <span class="metric-label">Reduction in Ticket Resolution Time</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">1000+</span>
-                    <span class="metric-label">Developers Supported Monthly</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">15+</span>
-                    <span class="metric-label">Years in Technical Support</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">25+</span>
-                    <span class="metric-label">Blockchain Networks Supported</span>
-                </div>
+            <p>I am a lifelong learner 📚 and effective collaborator 🤝 focused on delivering clear, actionable technical solutions 🎯.</p>
+            <div class="social-links" style="margin-top: 2rem;">
+                <a href="https://www.linkedin.com/in/dursun-ozgur-cakirkaya/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> LinkedIn 💼
+                </a>
+                <a href="https://github.com/obscureozy" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub 🐙
+                </a>
+                <a href="https://docak.hashnode.dev/" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-blog"></i> Blog ✍️
+                </a>
+                <a href="mailto:ozgurcakirkaya@gmail.com">
+                    <i class="fas fa-envelope"></i> Email 📧
+                </a>
             </div>
         </section>
+        </div>
 
-        <section class="skills">
-            <h2><i class="fas fa-tools"></i> Skills & Tech Stack</h2>
-            <div class="skill-grid">
-                <div class="skill-category">
-                    <h3>Technical Strengths</h3>
-                    <ul>
-                        <li><strong>Blockchain Support:</strong> EVM chains, TON, TRON, Solana, Bitcoin</li>
-                        <li><strong>APIs & SDKs:</strong> REST APIs, JavaScript, PHP, TypeScript</li>
-                        <li><strong>DevOps & Tools:</strong> Docker, GCP, GitHub, CI/CD pipelines</li>
-                        <li><strong>Support Platforms:</strong> Freshdesk, Jira, ClickUp, Slack, Discord</li>
-                        <li><strong>Programming:</strong> Python, Go (In Progress), Rust (In Progress)</li>
-                    </ul>
+        <div id="metrics-tab" class="tab-content">
+            <section class="metrics terminal-section">
+            <h2><i class="fas fa-terminal"></i> Impact & Success Metrics</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn close"></span>
+                        <span class="btn minimize"></span>
+                        <span class="btn maximize"></span>
+                    </div>
+                    <div class="terminal-title">GET /api/v1/engineer/impact</div>
                 </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Analytical problem-solving</li>
-                        <li>Clear technical communication</li>
-                        <li>Process optimization</li>
-                        <li>Cross-functional teamwork</li>
-                        <li>Customer-centric support</li>
-                    </ul>
+                <div class="terminal-body">
+                    <pre><code class="language-json">{
+  <span class="json-key">"technical_performance_efficiency"</span>: {
+    <span class="json-key">"50%_ticket_resolution_time_reduction"</span>: <span class="json-string">"Optimized internal support workflows and proactive developer engagement to accelerate issue closure."</span>,
+    <span class="json-key">"1,000+_developers_supported_monthly"</span>: <span class="json-string">"Successfully resolved complex technical issues across various SDKs, APIs, and node operations."</span>,
+    <span class="json-key">"90%_resolution_rate"</span>: <span class="json-string">"Consistently resolved the vast majority of B2C and B2B customer inquiries, significantly improving the overall user experience."</span>
+  },
+  <span class="json-key">"integration_user_success"</span>: {
+    <span class="json-key">"100%_successful_institutional_api_transitions"</span>: <span class="json-string">"Managed seamless API integration for institutional users, ensuring zero downtime during high-stakes migrations."</span>,
+    <span class="json-key">"90%+ sustained_csat_score"</span>: <span class="json-string">"Maintained a customer satisfaction rate of 90% or higher for four consecutive years through high-quality support and technical guidance."</span>,
+    <span class="json-key">"zero_to_launch_developer_support"</span>: <span class="json-string">"Guided blockchain developers through transaction signing, token operations, and smart contract interactions to improve project implementation success."</span>
+  },
+  <span class="json-key">"documentation_devops_impact"</span>: {
+    <span class="json-key">"reduced_onboarding_time_via_docs"</span>: <span class="json-string">"Authored technical documentation for staking, node setup, and token vesting, leading to a measurable decrease in repetitive support requests."</span>,
+    <span class="json-key">"tier_1_2_multichain_expertise"</span>: <span class="json-string">"Provided expert-level troubleshooting across EVM-compatible chains, Bitcoin, and Solana, ensuring connectivity and transaction-level stability."</span>,
+    <span class="json-key">"faster_cicd_delivery_cycles"</span>: <span class="json-string">"Managed DevOps tasks, including API setup and Docker-based deployments, contributing to more efficient project delivery."</span>
+  },
+  <span class="json-key">"strategic_team_impact"</span>: {
+    <span class="json-key">"15+_years_of_it_problem_solving"</span>: <span class="json-string">"Leveraged a decade and a half of technical experience to lead support initiatives and streamline training for global teams."</span>,
+    <span class="json-key">"scalable_knowledge_base"</span>: <span class="json-string">"Created generic code snippets and enhanced public GitHub repositories to ensure technical resources remain accessible and readable for the developer community."</span>
+  }
+}</code></pre>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
-        <section class="timeline">
+        <div id="skills-tab" class="tab-content">
+            <section class="skills terminal-section">
+                <h2><i class="fas fa-terminal"></i> Skills & Tech Stack</h2>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn close"></span>
+                            <span class="btn minimize"></span>
+                            <span class="btn maximize"></span>
+                        </div>
+                        <div class="terminal-title">GET /api/v1/engineer/skills</div>
+                    </div>
+                    <div class="terminal-body">
+                        <pre><code class="language-json">{
+  <span class="json-key">"blockchain_networks"</span>: [<span class="json-string">"EVM Chains"</span>, <span class="json-string">"TON"</span>, <span class="json-string">"TRON"</span>, <span class="json-string">"Solana"</span>, <span class="json-string">"Bitcoin"</span>, <span class="json-string">"Cosmos"</span>, <span class="json-string">"MultiverseX"</span>],
+  <span class="json-key">"apis_and_development"</span>: [<span class="json-string">"REST APIs"</span>, <span class="json-string">"GraphQL"</span>, <span class="json-string">"JavaScript"</span>, <span class="json-string">"TypeScript"</span>, <span class="json-string">"Python"</span>, <span class="json-string">"PHP"</span>, <span class="json-string">"Go"</span>, <span class="json-string">"Rust"</span>],
+  <span class="json-key">"infrastructure_and_devops"</span>: [<span class="json-string">"Docker"</span>, <span class="json-string">"Node Operations"</span>, <span class="json-string">"GCP"</span>, <span class="json-string">"GitHub"</span>, <span class="json-string">"CI/CD Pipelines"</span>, <span class="json-string">"Linux"</span>],
+  <span class="json-key">"support_platforms"</span>: [<span class="json-string">"Freshdesk"</span>, <span class="json-string">"Jira"</span>, <span class="json-string">"ClickUp"</span>, <span class="json-string">"Slack"</span>, <span class="json-string">"Discord"</span>],
+  <span class="json-key">"core_competencies"</span>: [
+    <span class="json-string">"Analytical problem-solving"</span>,
+    <span class="json-string">"Clear technical communication"</span>,
+    <span class="json-string">"Incident Management"</span>,
+    <span class="json-string">"Process optimization"</span>,
+    <span class="json-string">"API Troubleshooting"</span>,
+    <span class="json-string">"Customer-centric support"</span>
+  ]
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="timeline-tab" class="tab-content">
+            <section class="timeline">
             <h2><i class="fas fa-history"></i> Career Timeline</h2>
             <div class="timeline-container">
                 <div class="timeline-track">
@@ -183,20 +219,10 @@
                 </div>
             </div>
         </section>
+        </div>
 
-        <section class="projects">
-            <h2><i class="fas fa-code-branch"></i> Featured Projects</h2>
-            <blockquote>
-                💡 Explore hands-on work, open-source contributions, and blockchain experiments.
-            </blockquote>
-            <div class="github-link">
-                <a href="https://github.com/obscureozy" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> View Projects on GitHub
-                </a>
-            </div>
-        </section>
-
-        <section class="blog">
+        <div id="blog-tab" class="tab-content">
+            <section class="blog">
             <h2><i class="fas fa-blog"></i> Blockchain Blog</h2>
             <blockquote>
                 ✍️ Blockchain Network Insights
@@ -208,24 +234,13 @@
                 </a>
             </div>
         </section>
-
-        <section class="connect">
-            <h2><i class="fas fa-network-wired"></i> Connect With Me</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/dursun-ozgur-cakirkaya/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/obscureozy" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="mailto:ozgurcakirkaya@gmail.com">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-            </div>
-        </section>
+        </div>
     </div>
     <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-sun"></i>
     </button>
 </body>
 

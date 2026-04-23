@@ -21,14 +21,4 @@ export function initAnimations() {
         observer.observe(section);
     });
 
-    // Add hover effect to timeline items
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateX(10px)';
-        });
-
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateX(0)';
-        });
-    });
 }
