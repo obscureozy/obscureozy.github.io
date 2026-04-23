@@ -899,6 +899,7 @@ section:nth-child(5) {
 /* VS Code Tabs UI */
 .tabs-nav {
     display: flex;
+    justify-content: center;
     overflow-x: auto;
     background: #252526;
     border-bottom: 1px solid #1e1e1e;
@@ -936,6 +937,14 @@ section:nth-child(5) {
 [data-theme="light"] .tab-btn {
     color: #616161;
     border-right: 1px solid #cccccc;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+[data-theme="light"] .tab-btn:last-child {
+    border-right: none;
 }
 
 .tab-btn:hover {
