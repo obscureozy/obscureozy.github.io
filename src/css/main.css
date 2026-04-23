@@ -899,13 +899,20 @@ section:nth-child(5) {
 /* VS Code Tabs UI */
 .tabs-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     background: #252526;
     border-bottom: 1px solid #1e1e1e;
     margin-bottom: 2rem;
     scrollbar-width: none;
     border-radius: 8px 8px 0 0;
+}
+
+@media (min-width: 768px) {
+    .tabs-nav {
+        justify-content: center;
+    }
 }
 
 .tabs-nav::-webkit-scrollbar {
