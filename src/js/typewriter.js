@@ -2,8 +2,9 @@
 // Typewriter Effect
 const titles = [
     "Technical Support Engineer",
-    "Blockchain Infrastructure Specialist",
-    "Web3 Developer Advocate"
+    "DevX Specialist",
+    "DevRel Specialist",
+    "Technical Documentation Lead"
 ];
 
 const typewriter = document.querySelector('.typewriter');

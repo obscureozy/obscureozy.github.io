@@ -1000,3 +1000,147 @@ section:nth-child(5) {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   Upgrades: Metrics Dashboard, Academic Records, Hobbies Terminal
+   ========================================================================== */
+
+/* Metrics Dashboard styling */
+.metrics-dashboard {
+    margin-bottom: 2rem;
+}
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.metric-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.metric-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(74, 144, 226, 0.4);
+    box-shadow: var(--glass-shadow);
+}
+.metric-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.metric-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.metric-desc {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* Academic Records styling */
+.education-section {
+    margin-top: 2rem;
+}
+.education-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+.education-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(26, 26, 26, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+[data-theme="light"] .education-card {
+    background: rgba(255, 255, 255, 0.5);
+}
+.education-card:hover {
+    transform: translateX(5px);
+    border-color: rgba(74, 144, 226, 0.3);
+}
+.edu-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+.edu-details h3 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+.edu-school {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    opacity: 0.9;
+}
+
+/* Hobbies Terminal Styling */
+.hobbies-terminal {
+    background: #151515 !important;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    padding: 1.5rem;
+    border-radius: 0 0 12px 12px;
+}
+[data-theme="light"] .hobbies-terminal {
+    background: #fafafa !important;
+    border-top: 1px solid #e0e0e0;
+}
+.hobbies-run-command {
+    color: #007acc;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.hobbies-output {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.hobby-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    transition: transform 0.2s ease;
+}
+.hobby-line:hover {
+    transform: translateX(4px);
+}
+.hobby-tag {
+    color: #4ec9b0;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+[data-theme="light"] .hobby-tag {
+    color: #098658;
+}
