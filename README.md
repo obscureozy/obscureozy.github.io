@@ -4,10 +4,9 @@ A sleek, interactive personal portfolio engineered to resemble a modern Code Edi
 
 ## ✨ Features
 
-- **IDE/Terminal UI**: A fully immersive developer aesthetic. Horizontal VS Code style tabs (`about_me.md`, `skills.json`), and custom macOS terminal window blocks for metrics and skills.
+- **IDE/Terminal UI**: A fully immersive developer aesthetic. Horizontal VS Code style tabs (`about_me.md`, `impact_metrics.json`, `skills_stack.json`, `experience.js`), and custom macOS terminal window blocks for metrics and skills.
 - **Dynamic Cyber Scramble**: A 30FPS text decoding animation built in pure JavaScript that cycles through technical titles.
 - **Tech Grid Design**: A sleek CSS grid background with a floating accent orb and automatic Light/Dark mode toggling.
-- **Hashnode GraphQL**: Direct API connections to fetch and render the latest Blockchain blog posts securely.
 - **Vite Bundler**: Optimized with ES Modules, hot-module replacement, and distinct JS components.
 
 ## 🚀 Local Development
@@ -36,8 +35,7 @@ A sleek, interactive personal portfolio engineered to resemble a modern Code Edi
 │       ├── main.js         # Entry point
 │       ├── tabs.js         # Seamless IDE tab switching
 │       ├── typewriter.js   # Cyber Scramble effect
-│       ├── theme.js        # Light/Dark mode state
-│       └── blog.js         # Hashnode API integration
+│       └── theme.js        # Light/Dark mode state
 └── package.json            # Vite commands
 ```
 
