@@ -1,6 +1,7 @@
 {
   "name": "persona-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "A clean, modern personal website built with HTML, CSS, and JavaScript. Features a responsive design, smooth animations, and a dark theme.",
   "scripts": {
     "dev": "vite",
